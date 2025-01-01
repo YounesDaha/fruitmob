@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_application_6/firebase_options.dart';
+import 'package:flutter_application_6/screen/CartPage.dart';
 import 'package:flutter_application_6/screen/HomePage.dart';
 import 'package:flutter_application_6/screen/LoginPage.dart';
 import 'package:flutter_application_6/screen/RegisterPage.dart';
@@ -30,6 +31,8 @@ class MyApp extends StatelessWidget {
         '/register': (context) => const RegisterPage(),
         '/home': (context) => const FruitListPage(),
         '/user': (context) => const UserProfilePage(),
+        '/cart': (context) => const CartPage(),
+
 
       },
     );

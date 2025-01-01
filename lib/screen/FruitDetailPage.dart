@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import '../services/CartService.dart';
 
 class FruitDetailPage extends StatelessWidget {
   final Map<String, dynamic> item;
 
   const FruitDetailPage({Key? key, required this.item}) : super(key: key);
+
+  Future<void> _addToCart(BuildContext context) async {
+    await CartService.addItem(item);
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Fruit ajouté au panier')),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +63,18 @@ class FruitDetailPage extends StatelessWidget {
                   style: const TextStyle(fontSize: 18),
                 ),
               ],
+            ),
+            const SizedBox(height: 32),
+            // Bouton "Ajouter au panier"
+            Center(
+              child: ElevatedButton(
+                onPressed: () => _addToCart(context),
+                style: ElevatedButton.styleFrom(backgroundColor: const Color.fromARGB(255, 76, 86, 175)),
+                child: const Text(
+                  'Ajouter au panier',
+                  style: TextStyle(fontSize: 18),
+                ),
+              ),
             ),
           ],
         ),

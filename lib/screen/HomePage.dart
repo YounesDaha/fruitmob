@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_application_6/screen/CartPage.dart';
 import 'package:flutter_application_6/screen/FruitDetailPage.dart';
 import 'package:flutter_application_6/screen/UserProfilePage.dart';
 
@@ -135,14 +136,7 @@ class _FruitListPageState extends State<FruitListPage> {
   }
 }
 
-class CartPage extends StatelessWidget {
-  const CartPage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const Center(child: Text('Page du panier en cours de construction'));
-  }
-}
 
 
 
